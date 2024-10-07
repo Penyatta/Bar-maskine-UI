@@ -3,43 +3,32 @@ void setup(){
 
   cp5 = new ControlP5(this);
   
+  
+for (int i=0;i<9;i++){
+  Flasker[i]="Drik"+i;
+}
   int y = 20;
   int x = 20;
   int Yspacing = 60;
   int Xspacing =120;
   for(int i=0;i<9;i++){
-  cp5.addTextfield("")
-     .setPosition(x,y)
-     .setSize(200,40)
-     .setFont(createFont("arial",20))
-     .setAutoClear(false)
-     ;
-     x += Xspacing;
-     if(x==(20+Xspacing*3)){
-      x=20;
-      y+=Yspacing;
-     }
-  }
-/*
-  int y = 20;
-  int x = 20;
-  int Yspacing = 60;
-  int Xspacing =120;
-  for(String name: flasker){
-    cp5.addTextfield(name)
+    cp5.addTextfield(Flasker[i])
        .setPosition(x,y)
        .setSize(100,40)
        .setFont(font)
-       .setFocus(true)
-       .setColor(color(255,0,0))
+       .setColor(color(0,0,0))
+       //.setVisible(false)
+       .setColorBackground(0)
+       .setColorForeground(0);
        ;
+       rect(x,y,100,40);
      x += Xspacing;
      if(x==(20+Xspacing*3)){
       x=20;
       y+=Yspacing;
      }
   }
-  */
+  
 
   textFont(font);
  size(1366,768);
@@ -54,6 +43,7 @@ void setup(){
  Mojito.tilFrem("Fyld glas med isterninger");
  Mojito.tilFrem("Tilføj sukker, mynte, lime");
  Mojito.tilFrem("Sæt glas, og skænk");
+ 
 }
 
 void draw(){
