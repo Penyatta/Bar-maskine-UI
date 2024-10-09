@@ -1,31 +1,23 @@
 String[] setupIngrediensTextFelter= new String[5];
-String[] setupmaengderTextFelter= new String[5];
-String[] setupandreIngredienserTextFelter= new String[5];
-String[] setupfremgangsmaadeTextFelter= new String[5];
-controlP5.Textfield[] IngrediensTextFelter= new controlP5.Textfield[5];
-controlP5.Textfield[] maengderTextFelter= new controlP5.Textfield[5];
-controlP5.Textfield[] andreIngredienserTextFelter= new controlP5.Textfield[5];
-controlP5.Textfield[] fremgangsmaadeTextFelter= new controlP5.Textfield[5];
+String[] setupMaengderTextFelter= new String[5];
+String[] setupAndreIngredienserTextFelter= new String[5];
+String[] setupFremgangsmaadeTextFelter= new String[5];
 
-void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color textFarve, controlP5.Textfield feltNavn,PFont font,String tom){
-  feltNavn=cp5.addTextfield(tom)
-  .setPosition(x, y)
-  .setSize(sizeX, sizeY)
-  .setFont(font)
-  .setColor(color(0, 0, 0))
-  .setColorBackground(feltFarve)
-  .setColorForeground(textFarve);
-;
-feltNavn.setCaptionLabel("");
-feltNavn.hide();
-}
 void setupOpskrift() {
   PFont font = createFont("arial", 20);
+  color textFeltBaggrund=color(255,200,200);
+  color textFarve=color(0);
+  int textFeltSizeX=100;
+  int textFeltSizeY=20;
   for (int i=0; i<5; i++) {
-    setupIngrediensTextFelter[i]="ing"+i;
-    setupmaengderTextFelter[i]="maeng"+i;
-    setupandreIngredienserTextFelter[i]="aning"+i;
-    setupfremgangsmaadeTextFelter[i]="frem"+i;
+    setupIngrediensTextFelter[i]="inger"+i;
+    setupMaengderTextFelter[i]="maeng"+i;
+    setupAndreIngredienserTextFelter[i]="aning"+i;
+    setupFremgangsmaadeTextFelter[i]="frem"+i;
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupIngrediensTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupMaengderTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupAndreIngredienserTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupFremgangsmaadeTextFelter[i]);
   }
 }
 
