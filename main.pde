@@ -11,23 +11,20 @@ for (int i=0;i<9;i++){
   int x = 20;
   int Yspacing = 60;
   int Xspacing =120;
+  int sizeX=100;
+  int sizeY=20;
+  color feltFarve=color(255, 211, 211);
+  color textFarve=color(0);
+  
   for(int i=0;i<9;i++){
-    flaskerText[i]=cp5.addTextfield(Flasker[i])
-       .setPosition(x,y)
-       .setSize(100,40)
-       .setFont(font)
-       .setColor(color(0,0,0))
-       .setColorBackground(color(255,211,211))
-       .setColorForeground(0);
-       ;
-       flaskerText[i].setCaptionLabel("");
-       flaskerText[i].hide();
+    lavTextFelt(x,y,sizeX,sizeY,feltFarve,textFarve,flaskerText[i],font,Flasker[i]);
      x += Xspacing;
      if(x==(20+Xspacing*3)){ 
       x=20;
       y+=Yspacing;
      }
   }
+  
   
 
   textFont(font);
