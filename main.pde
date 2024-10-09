@@ -12,18 +12,18 @@ for (int i=0;i<9;i++){
   int Yspacing = 60;
   int Xspacing =120;
   for(int i=0;i<9;i++){
-    cp5.addTextfield(Flasker[i])
+    flaskerText[i]=cp5.addTextfield(Flasker[i])
        .setPosition(x,y)
        .setSize(100,40)
        .setFont(font)
        .setColor(color(0,0,0))
-       //.setVisible(false)
-       .setColorBackground(0)
+       .setColorBackground(color(255,211,211))
        .setColorForeground(0);
        ;
-       rect(x,y,100,40);
+       flaskerText[i].setCaptionLabel("");
+       flaskerText[i].hide();
      x += Xspacing;
-     if(x==(20+Xspacing*3)){
+     if(x==(20+Xspacing*3)){ 
       x=20;
       y+=Yspacing;
      }
@@ -31,7 +31,7 @@ for (int i=0;i<9;i++){
   
 
   textFont(font);
- size(1366,768);
+ size(1440,900);
  Opskrift Mojito =new Opskrift("Mojito");
  opskrifter.add(Mojito);
  Mojito.tilIng("Lime sodavand",75);
