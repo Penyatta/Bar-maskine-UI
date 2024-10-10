@@ -10,7 +10,7 @@ void setupOpskrift() {
   int textFeltSizeX=100;
   int textFeltSizeY=20;
   for (int i=0; i<5; i++) {
-    setupIngrediensTextFelter[i]="inger"+i;
+    setupIngrediensTextFelter[i]="ing"+i;
     setupMaengderTextFelter[i]="maeng"+i;
     setupAndreIngredienserTextFelter[i]="aning"+i;
     setupFremgangsmaadeTextFelter[i]="frem"+i;

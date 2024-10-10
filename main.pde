@@ -13,7 +13,7 @@ void setup() {
   int Xspacing =120;
   int sizeX=100;
   int sizeY=20;
-  color feltFarve=color(255, 211, 211);
+  color feltFarve=color(0,0);
   color textFarve=color(0);
 
   for (int i=0; i<9; i++) {
@@ -46,6 +46,7 @@ void setup() {
 }
 
 void draw() {
+  background(255);
   if (visDrikkevare) {
     disDrikkevare();
   } else if (visOpskrifter) {
@@ -64,12 +65,13 @@ void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color text
   .setPosition(x, y)
   .setSize(sizeX, sizeY)
   .setFont(font)
-  .setColor(color(0, 0, 0))
   .setColorBackground(feltFarve)
-  .setColorForeground(textFarve);
+  .setColorForeground(textFarve)
+  .setVisible(false);
 ;
 
 cp5.get(Textfield.class,tom).setCaptionLabel("");
-cp5.get(Textfield.class,tom).hide();
+cp5.get(Textfield.class,tom).setColorBackground(color(150, 0));
+
 
 }
