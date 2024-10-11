@@ -1,27 +1,33 @@
+
+PImage img;
+  PFont fontt;
 String[] Flasker=new String[9];
-void setup() {
-  PFont font = createFont("arial", 20);
+
+
+void setup(){
+  PFont font = createFont("arial",20);
+  fontt=loadFont("BellMTBold-30.vlw");
 
   cp5 = new ControlP5(this);
-
-  for (int i=0; i<9; i++) {
-    Flasker[i]="Drik"+i;
-  }
-  int y = 20;
-  int x = 20;
-  int Yspacing = 60;
-  int Xspacing =120;
-  int sizeX=100;
-  int sizeY=20;
-  color feltFarve=color(0, 0);
-  color textFarve=color(0);
-
-  for (int i=0; i<9; i++) {
-    lavTextFelt(x, y, sizeX, sizeY, feltFarve, textFarve, font, Flasker[i]);
-
-    x += Xspacing;
-    if (x==(20+Xspacing*3)) {
-      x=20;
+  
+  
+for (int i=0;i<9;i++){
+  Flasker[i]="Drik"+i;
+}
+  int y = 250;
+  int x = 200;
+  int Yspacing = 190;
+  int Xspacing =450;
+  int sizeX=255;
+  int sizeY=75;
+  color feltFarve=color(255,211,211);
+  color Farven=color(#420002);
+  
+  for(int i=0;i<9;i++){
+   lavTextFelt(x, y, sizeX, sizeY, feltFarve, Farven, fontt, Flasker[i]);
+     x += Xspacing;
+     if(x==(200+Xspacing*3)){ 
+      x=200;
       y+=Yspacing;
     }
   }
@@ -30,23 +36,28 @@ void setup() {
 
 
   textFont(font);
-  size(1440, 900);
-  Opskrift Mojito =new Opskrift("Mojito");
-  opskrifter.add(Mojito);
-  Mojito.tilIng("Lime sodavand", 75);
-  Mojito.tilIng("Hvid Rom", 75);
-  Mojito.tilBesk("Klassisk Mojito med lime og mynte");
-  Mojito.tilExIng("Rørsukker");
-  Mojito.tilExIng("Lime");
-  Mojito.tilExIng("Mynte");
-  Mojito.tilFrem("Fyld glas med isterninger");
-  Mojito.tilFrem("Tilføj sukker, mynte, lime");
-  Mojito.tilFrem("Sæt glas, og skænk");
+
+ size(1440,900);
+ Opskrift Mojito =new Opskrift("Mojito");
+ opskrifter.add(Mojito);
+ Mojito.tilIng("Lime sodavand",75);
+ Mojito.tilIng("Hvid Rom",75);
+ Mojito.tilBesk("Klassisk Mojito med lime og mynte");
+ Mojito.tilExIng("Rørsukker");
+ Mojito.tilExIng("Lime");
+ Mojito.tilExIng("Mynte");
+ Mojito.tilFrem("Fyld glas med isterninger");
+ Mojito.tilFrem("Tilføj sukker, mynte, lime");
+ Mojito.tilFrem("Sæt glas, og skænk");
+ 
+ //load et billede
+ img = loadImage("Flasker.png");
 }
 
-void draw() {
-  background(255);
-  if (visDrikkevare) {
+void draw(){
+  image(img, 0, 0);
+ if(visDrikkevare){
+
     disDrikkevare();
   } else if (visOpskrifter) {
     disOpskrift();
@@ -59,17 +70,17 @@ void draw() {
   }
 }
 
-void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color textFarve, PFont font, String tom) {
+void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color Farven, PFont font, String tom) {
   cp5.addTextfield(tom)
     .setPosition(x, y)
     .setSize(sizeX, sizeY)
     .setFont(font)
+    .setColor(Farven)
     .setColorBackground(feltFarve)
-    .setColorForeground(textFarve)
     .setVisible(false)
     .setAutoClear(false)
+    .align(120,130,120,130)
     ;
 
   cp5.get(Textfield.class, tom).setCaptionLabel("");
-  cp5.get(Textfield.class, tom).setColorBackground(color(150, 0));
 }
