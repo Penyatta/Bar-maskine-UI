@@ -26,6 +26,9 @@ void disOpskrift() {
   
    // Tegn scrollbar
   drawScrollbar();
+  
+  rect(305,380,150,45);
+
 }
 
 // Funktion til at tegne scrollbar
