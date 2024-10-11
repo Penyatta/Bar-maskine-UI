@@ -60,6 +60,9 @@ void draw(){
  else if(visRens){
    disRens();
  }
+ else if(visBarSkænker){
+   disBarSkaenker();
+ } 
  else{
   disHomepage();
  }

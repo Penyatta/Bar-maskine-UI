@@ -17,7 +17,7 @@ void disOpskrift() {
  // Beregn scrollbarens højde baseret på forholdet mellem vinduets højde og billedets højde
   
   scrollbarHeight = int(viewportHeight * (viewportHeight / float(opskriftside.height)));
-  
+   
   // Begræns scrollY, så vi ikke kan scrolle forbi toppen eller bunden af billedet
   scrollY = constrain(scrollY, 0, maxScroll);
   
@@ -38,6 +38,7 @@ void drawScrollbar() {
   
   // Tegn den aktuelle scrollbar (den bevægende streg)
   fill(#EBBF5E);
+   noStroke();
   rect(1409, scrollbarY+115, 16, 64, 10);
   
   // rect(x,y,højde, brede

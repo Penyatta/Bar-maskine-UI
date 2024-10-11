@@ -32,6 +32,7 @@ Boolean visOpskrifter=false;
 boolean visSkænk=false;
 boolean visRens=false;
 boolean visDrikkevare=false;
+Boolean visBarSkænker=false;
 
 
 void controlEvent(ControlEvent theEvent) {
