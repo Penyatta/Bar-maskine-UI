@@ -1,5 +1,7 @@
+
 PImage img;
   PFont fontt;
+
 
 
 void setup(){
@@ -16,30 +18,25 @@ for (int i=0;i<9;i++){
   int x = 200;
   int Yspacing = 190;
   int Xspacing =450;
+  int sizeX=255;
+  int sizeY=75;
+  color feltFarve=color(255,211,211);
+  color Farven=color(#420002);
   
   for(int i=0;i<9;i++){
-    flaskerText[i]=cp5.addTextfield(Flasker[i])
-       .setPosition(x,y)
-       .setSize(255,75)
-       .setFont(fontt)
-       .setColor(#420002)
-       .setColorBackground(color(255,211,211))
-       .setAutoClear(false)
-       .align(120,130,120,130)
-       ;
-       flaskerText[i].setCaptionLabel("");
-       flaskerText[i].hide();
-    
-     
+   lavTextFelt(x, y, sizeX, sizeY, feltFarve, Farven, fontt, Flasker[i]);
      x += Xspacing;
      if(x==(200+Xspacing*3)){ 
       x=200;
       y+=Yspacing;
-     }
+    }
   }
-  
+  setupOpskrift();
+
+
 
   textFont(font);
+
  size(1440,900);
  Opskrift Mojito =new Opskrift("Mojito");
  opskrifter.add(Mojito);
@@ -60,19 +57,30 @@ for (int i=0;i<9;i++){
 void draw(){
   image(img, 0, 0);
  if(visDrikkevare){
+
     disDrikkevare();
+  } else if (visOpskrifter) {
+    disOpskrift();
+  } else if (visSkænk) {
+    disSkaenk();
+  } else if (visRens) {
+    disRens();
+  } else {
+    disHomepage();
   }
- else if(visOpskrifter){
-   disOpskrift();
- }
- else if(visSkænk){
-   disSkaenk();
- }
- 
- else if(visRens){
-   disRens();
- }
- else{
-  disHomepage();
- }
+}
+
+void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color Farven, PFont font, String tom) {
+  cp5.addTextfield(tom)
+    .setPosition(x, y)
+    .setSize(sizeX, sizeY)
+    .setFont(font)
+    .setColor(Farven)
+    .setColorBackground(feltFarve)
+    .setVisible(false)
+    .setAutoClear(false)
+    .align(120,130,120,130)
+    ;
+
+  cp5.get(Textfield.class, tom).setCaptionLabel("");
 }
