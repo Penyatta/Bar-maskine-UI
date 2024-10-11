@@ -74,7 +74,7 @@ void draw() {
     disRens();
     } else if(visBarSkænker){
    disBarSkaenker();
- } 
+ 
   } else {
     disHomepage();
   }

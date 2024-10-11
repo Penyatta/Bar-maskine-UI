@@ -2,7 +2,7 @@
 
 String[] Flasker=new String[9];
 
-
+PImage drikkevarerside;
 
 void disDrikkevare() {
   
@@ -13,4 +13,3 @@ image(drikkevarerside, 0, 0);
 }
   
   
-
