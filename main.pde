@@ -77,8 +77,11 @@ void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color Farv
     .setFont(font)
     .setColor(Farven)
     .setColorBackground(feltFarve)
+    .setColorForeground(feltFarve)
+    .setColorActive(feltFarve)
     .setVisible(false)
     .setAutoClear(false)
+    .setFocus(false)
     .align(120,130,120,130)
     ;
 

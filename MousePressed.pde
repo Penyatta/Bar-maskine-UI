@@ -9,6 +9,11 @@ void mousePressed() {
     if (mouseX > 83 && mouseX < 480 && mouseY > 294 && mouseY < 484) {
 
       visDrikkevare=true;
+      for (int i=0; i<9; i++) {
+   
+      
+      cp5.get(Textfield.class,Flasker[i]).show();
+      }
     }
 
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
