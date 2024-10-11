@@ -31,7 +31,7 @@ ArrayList<Opskrift> opskrifter = new ArrayList<Opskrift>();
 Boolean visOpskrifter=false;
 boolean visSkænk=false;
 boolean visRens=false;
-boolean visDrikkevare=true;
+boolean visDrikkevare=false;
 
 
 void controlEvent(ControlEvent theEvent) {
