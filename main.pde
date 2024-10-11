@@ -8,6 +8,8 @@ void setup() {
 
   cp5 = new ControlP5(this);
 
+
+
   //Giver navne til drikkevare textfelterne
   for (int i=0; i<9; i++) {
     Flasker[i]="Drik"+i;
@@ -33,6 +35,7 @@ void setup() {
   }
   //Forbereder textfelterne til opskriften
   setupOpskrift();
+
 
 
 
@@ -69,9 +72,13 @@ void draw() {
     disSkaenk();
   } else if (visRens) {
     disRens();
+    } else if(visBarSkænker){
+   disBarSkaenker();
+ } 
   } else {
     disHomepage();
   }
+
 }
 
 //Funktionen der tegner textfelterne
@@ -95,4 +102,5 @@ void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color Farv
     ;
   //Sætter titlen på textfelterne til at være tom
   cp5.get(Textfield.class, tom).setCaptionLabel("");
+
 }

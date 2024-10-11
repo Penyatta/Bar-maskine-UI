@@ -1,4 +1,4 @@
-PImage drikkevarerside;
+
 
 String[] Flasker=new String[9];
 
@@ -13,3 +13,4 @@ image(drikkevarerside, 0, 0);
 }
   
   
+
