@@ -47,6 +47,8 @@ for (int i=0;i<9;i++){
 }
 
 void draw(){
+   
+ 
  if(visDrikkevare){
     disDrikkevare();
   }
@@ -60,6 +62,11 @@ void draw(){
  else if(visRens){
    disRens();
  }
+ 
+ else if(visRediger){
+   disRediger();
+ }
+ 
  else{
   disHomepage();
  }
