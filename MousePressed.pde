@@ -2,6 +2,11 @@
 void mousePressed() {
   if (visDrikkevare) {
   } else if (visOpskrifter) {
+  
+    if ((mouseX > 305 && mouseX <305+150 ) && (mouseY > 375-scrollY && mouseY <375+50-scrollY)) {
+      visRediger=true;
+      visOpskrifter=false;
+    }
   } else if (visSkænk) {
     // Tjek om musen er inden for det definerede område (knappen)
     if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {
@@ -25,7 +30,7 @@ void mousePressed() {
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
       visOpskrifter=true;
     }
-    
+
     if (mouseX > 83 && mouseX < 83+410 && mouseY > 561 && mouseY < 561+190) {
       visRens=true;
     }

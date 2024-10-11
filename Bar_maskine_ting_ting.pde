@@ -28,11 +28,13 @@ class Opskrift {
 
 
 ArrayList<Opskrift> opskrifter = new ArrayList<Opskrift>();
-Boolean visOpskrifter=false;
+boolean visOpskrifter=false;
 boolean visSkænk=false;
 boolean visRens=false;
 boolean visDrikkevare=false;
-Boolean visBarSkænker=false;
+boolean visRediger=false;
+boolean visBarSkænker=false;
+
 
 
 void controlEvent(ControlEvent theEvent) {
