@@ -1,4 +1,4 @@
- String[] Flasker=new String[9];
+String[] Flasker=new String[9];
 void setup() {
   PFont font = createFont("arial", 20);
 
@@ -13,12 +13,11 @@ void setup() {
   int Xspacing =120;
   int sizeX=100;
   int sizeY=20;
-  color feltFarve=color(0,0);
+  color feltFarve=color(0, 0);
   color textFarve=color(0);
 
   for (int i=0; i<9; i++) {
     lavTextFelt(x, y, sizeX, sizeY, feltFarve, textFarve, font, Flasker[i]);
-
 
     x += Xspacing;
     if (x==(20+Xspacing*3)) {
@@ -60,18 +59,17 @@ void draw() {
   }
 }
 
-void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color textFarve,PFont font,String tom){
+void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color textFarve, PFont font, String tom) {
   cp5.addTextfield(tom)
-  .setPosition(x, y)
-  .setSize(sizeX, sizeY)
-  .setFont(font)
-  .setColorBackground(feltFarve)
-  .setColorForeground(textFarve)
-  .setVisible(false);
-;
+    .setPosition(x, y)
+    .setSize(sizeX, sizeY)
+    .setFont(font)
+    .setColorBackground(feltFarve)
+    .setColorForeground(textFarve)
+    .setVisible(false)
+    .setAutoClear(false)
+    ;
 
-cp5.get(Textfield.class,tom).setCaptionLabel("");
-cp5.get(Textfield.class,tom).setColorBackground(color(150, 0));
-
-
+  cp5.get(Textfield.class, tom).setCaptionLabel("");
+  cp5.get(Textfield.class, tom).setColorBackground(color(150, 0));
 }
