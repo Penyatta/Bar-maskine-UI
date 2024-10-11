@@ -1,7 +1,7 @@
 
 PImage img;
   PFont fontt;
-String[] Flasker=new String[9];
+
 
 
 void setup(){

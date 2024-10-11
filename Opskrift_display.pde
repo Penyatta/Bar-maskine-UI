@@ -4,10 +4,10 @@ int maxScroll;    // Maksimal scrollværdi
 int viewportHeight = 900;  // Højden på "visningsområdet", altså skærmen vi viser på
 int scrollbarWidth = 15;   // Bredden af scrollbar
 int scrollbarHeight;     // Højden af scrollbar (dynamisk)
-String[] setupIngrediensTextFelter= new String[5];
-String[] setupMaengderTextFelter= new String[5];
-String[] setupAndreIngredienserTextFelter= new String[5];
-String[] setupFremgangsmaadeTextFelter= new String[5];
+String[] IngrediensTextFelter= new String[5];
+String[] MaengderTextFelter= new String[5];
+String[] AndreIngredienserTextFelter= new String[5];
+String[] FremgangsmaadeTextFelter= new String[5];
 
 void setupOpskrift() {
   PFont font = createFont("arial", 20);
@@ -16,14 +16,14 @@ void setupOpskrift() {
   int textFeltSizeX=100;
   int textFeltSizeY=20;
   for (int i=0; i<5; i++) {
-    setupIngrediensTextFelter[i]="ing"+i;
-    setupMaengderTextFelter[i]="maeng"+i;
-    setupAndreIngredienserTextFelter[i]="aning"+i;
-    setupFremgangsmaadeTextFelter[i]="frem"+i;
-    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupIngrediensTextFelter[i]);
-    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupMaengderTextFelter[i]);
-    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupAndreIngredienserTextFelter[i]);
-    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,setupFremgangsmaadeTextFelter[i]);
+    IngrediensTextFelter[i]="ing"+i;
+    MaengderTextFelter[i]="maeng"+i;
+    AndreIngredienserTextFelter[i]="aning"+i;
+    FremgangsmaadeTextFelter[i]="frem"+i;
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,IngrediensTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,MaengderTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,AndreIngredienserTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,FremgangsmaadeTextFelter[i]);
   }
 }
 
