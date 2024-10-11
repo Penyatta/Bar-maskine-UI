@@ -4,30 +4,30 @@ void setup(){
   cp5 = new ControlP5(this);
   
   
-for (int i=0;i<9;i++){
-  Flasker[i]="Drik"+i;
-}
-  int y = 20;
-  int x = 20;
-  int Yspacing = 60;
-  int Xspacing =120;
-  for(int i=0;i<9;i++){
-    flaskerText[i]=cp5.addTextfield(Flasker[i])
-       .setPosition(x,y)
-       .setSize(100,40)
-       .setFont(font)
-       .setColor(color(0,0,0))
-       .setColorBackground(color(255,211,211))
-       .setColorForeground(0);
-       ;
-       flaskerText[i].setCaptionLabel("");
-       flaskerText[i].hide();
-     x += Xspacing;
-     if(x==(20+Xspacing*3)){ 
-      x=20;
-      y+=Yspacing;
-     }
-  }
+//for (int i=0;i<9;i++){
+//  Flasker[i]="Drik"+i;
+//}
+//  int y = 20;
+//  int x = 20;
+//  int Yspacing = 60;
+//  int Xspacing =120;
+//  for(int i=0;i<9;i++){
+//    flaskerText[i]=cp5.addTextfield(Flasker[i])
+//       .setPosition(x,y)
+//       .setSize(100,40)
+//       .setFont(font)
+//       .setColor(color(0,0,0))
+//       .setColorBackground(color(255,211,211))
+//       .setColorForeground(0);
+//       ;
+//       flaskerText[i].setCaptionLabel("");
+//       flaskerText[i].hide();
+//     x += Xspacing;
+//     if(x==(20+Xspacing*3)){ 
+//      x=20;
+//      y+=Yspacing;
+//     }
+//  }
   
 
   textFont(font);
