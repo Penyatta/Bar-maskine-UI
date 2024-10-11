@@ -4,24 +4,28 @@ int maxScroll;    // Maksimal scrollværdi
 int viewportHeight = 900;  // Højden på "visningsområdet", altså skærmen vi viser på
 int scrollbarWidth = 15;   // Bredden af scrollbar
 int scrollbarHeight;     // Højden af scrollbar (dynamisk)
-String[] IngrediensTextFelter= new String[5];
-String[] MaengderTextFelter= new String[5];
-String[] AndreIngredienserTextFelter= new String[5];
-String[] FremgangsmaadeTextFelter= new String[5];
+String[] IngrediensTextFelter= new String[5]; //array med ingrediens texfelternes navne
+String[] MaengderTextFelter= new String[5]; //array med mængde texfelternes navne
+String[] AndreIngredienserTextFelter= new String[5]; //array med andre ingredienser texfelternes navne
+String[] FremgangsmaadeTextFelter= new String[5]; //array med fremgangsmåde texfelternes navne
 
 void setupOpskrift() {
   PFont font = createFont("arial", 20);
   color textFeltBaggrund=color(255,200,200);
   color textFarve=color(0);
-  int textFeltSizeX=100;
-  int textFeltSizeY=20;
+  // Størrelsen på opskrift textfelterne
+  int textFeltSizeX=100; 
+  int textFeltMaengderSizeX=50; 
+  int textFeltSizeY=20; 
   for (int i=0; i<5; i++) {
+    // giver navne til alle textfelterne
     IngrediensTextFelter[i]="ing"+i;
     MaengderTextFelter[i]="maeng"+i;
     AndreIngredienserTextFelter[i]="aning"+i;
     FremgangsmaadeTextFelter[i]="frem"+i;
+    //Laver textfelterne til opskrift
     lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,IngrediensTextFelter[i]);
-    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,MaengderTextFelter[i]);
+    lavTextFelt(10,10,textFeltMaengderSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,MaengderTextFelter[i]);
     lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,AndreIngredienserTextFelter[i]);
     lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,FremgangsmaadeTextFelter[i]);
   }

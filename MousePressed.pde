@@ -9,9 +9,9 @@ void mousePressed() {
     if (mouseX > 83 && mouseX < 480 && mouseY > 294 && mouseY < 484) {
 
       visDrikkevare=true;
-      for (int i=0; i<9; i++) {
-   
       
+      //Viser drikkevare textfelterne
+      for (int i=0; i<9; i++) {
       cp5.get(Textfield.class,Flasker[i]).show();
       }
     }
