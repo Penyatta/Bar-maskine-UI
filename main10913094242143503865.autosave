@@ -1,46 +1,51 @@
+//load billede
 PImage img;
-  PFont fontt;
-
 
 void setup(){
   PFont font = createFont("arial",20);
-  fontt=loadFont("BellMTBold-30.vlw");
 
   cp5 = new ControlP5(this);
   
-  
-for (int i=0;i<9;i++){
-  Flasker[i]="Drik"+i;
-}
-  int y = 250;
-  int x = 200;
-  int Yspacing = 190;
-  int Xspacing =450;
-  
+  int y = 20;
+  int x = 20;
+  int Yspacing = 60;
+  int Xspacing =120;
   for(int i=0;i<9;i++){
-    flaskerText[i]=cp5.addTextfield(Flasker[i])
-       .setPosition(x,y)
-       .setSize(255,75)
-       .setFont(fontt)
-       .setColor(#420002)
-       .setColorBackground(color(255,211,211))
-       .setAutoClear(false)
-       .align(120,130,120,130)
-       ;
-       flaskerText[i].setCaptionLabel("");
-       flaskerText[i].hide();
-    
-     
+  cp5.addTextfield("")
+     .setPosition(x,y)
+     .setSize(200,40)
+     .setFont(createFont("arial",20))
+     .setAutoClear(false)
+     ;
      x += Xspacing;
-     if(x==(200+Xspacing*3)){ 
-      x=200;
+     if(x==(20+Xspacing*3)){
+      x=20;
       y+=Yspacing;
      }
   }
-  
+/*
+  int y = 20;
+  int x = 20;
+  int Yspacing = 60;
+  int Xspacing =120;
+  for(String name: flasker){
+    cp5.addTextfield(name)
+       .setPosition(x,y)
+       .setSize(100,40)
+       .setFont(font)
+       .setFocus(true)
+       .setColor(color(255,0,0))
+       ;
+     x += Xspacing;
+     if(x==(20+Xspacing*3)){
+      x=20;
+      y+=Yspacing;
+     }
+  }
+  */
 
   textFont(font);
- size(1440,900);
+ size(1366,768);
  Opskrift Mojito =new Opskrift("Mojito");
  opskrifter.add(Mojito);
  Mojito.tilIng("Lime sodavand",75);
@@ -55,6 +60,7 @@ for (int i=0;i<9;i++){
  
  //load et billede
  img = loadImage("Flasker.png");
+ println(img);
 }
 
 void draw(){
