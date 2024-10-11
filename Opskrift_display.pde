@@ -4,7 +4,32 @@ int maxScroll;    // Maksimal scrollværdi
 int viewportHeight = 900;  // Højden på "visningsområdet", altså skærmen vi viser på
 int scrollbarWidth = 15;   // Bredden af scrollbar
 int scrollbarHeight;     // Højden af scrollbar (dynamisk)
+String[] IngrediensTextFelter= new String[5]; //array med ingrediens texfelternes navne
+String[] MaengderTextFelter= new String[5]; //array med mængde texfelternes navne
+String[] AndreIngredienserTextFelter= new String[5]; //array med andre ingredienser texfelternes navne
+String[] FremgangsmaadeTextFelter= new String[5]; //array med fremgangsmåde texfelternes navne
 
+void setupOpskrift() {
+  PFont font = createFont("arial", 20);
+  color textFeltBaggrund=color(255,200,200);
+  color textFarve=color(0);
+  // Størrelsen på opskrift textfelterne
+  int textFeltSizeX=100; 
+  int textFeltMaengderSizeX=50; 
+  int textFeltSizeY=20; 
+  for (int i=0; i<5; i++) {
+    // giver navne til alle textfelterne
+    IngrediensTextFelter[i]="ing"+i;
+    MaengderTextFelter[i]="maeng"+i;
+    AndreIngredienserTextFelter[i]="aning"+i;
+    FremgangsmaadeTextFelter[i]="frem"+i;
+    //Laver textfelterne til opskrift
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,IngrediensTextFelter[i]);
+    lavTextFelt(10,10,textFeltMaengderSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,MaengderTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,AndreIngredienserTextFelter[i]);
+    lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,FremgangsmaadeTextFelter[i]);
+  }
+}
 
 void disOpskrift() {
 
@@ -17,7 +42,7 @@ void disOpskrift() {
  // Beregn scrollbarens højde baseret på forholdet mellem vinduets højde og billedets højde
   
   scrollbarHeight = int(viewportHeight * (viewportHeight / float(opskriftside.height)));
-  
+   
   // Begræns scrollY, så vi ikke kan scrolle forbi toppen eller bunden af billedet
   scrollY = constrain(scrollY, 0, maxScroll);
   
@@ -26,6 +51,9 @@ void disOpskrift() {
   
    // Tegn scrollbar
   drawScrollbar();
+  
+  rect(305,380,150,45);
+
 }
 
 // Funktion til at tegne scrollbar
@@ -38,6 +66,7 @@ void drawScrollbar() {
   
   // Tegn den aktuelle scrollbar (den bevægende streg)
   fill(#EBBF5E);
+   noStroke();
   rect(1409, scrollbarY+115, 16, 64, 10);
   
   // rect(x,y,højde, brede
