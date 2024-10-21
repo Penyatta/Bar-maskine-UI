@@ -60,13 +60,11 @@ void setup() {
   img = loadImage("Flasker.png");
 }
 
-
 void draw() {
   image(img, 0, 0);
   
   //Sørger for at det er de rigtige funktioner der kører når det skal vises
   if (visDrikkevare) {
-
     disDrikkevare();
   } else if (visOpskrifter) {
     disOpskrift();
@@ -76,15 +74,19 @@ void draw() {
     disRens();
     } else if(visBarSkænker){
    disBarSkaenker();
+
  
     } else if(visRediger){
    disRediger();
+     } else if(visSkænkFærdig){
+   disSkaenkFaerdig();
+ } else {
 
-  } else {
     disHomepage();
   }
-
 }
+
+
 
 //Funktionen der tegner textfelterne
 void lavTextFelt(int x, int y, int sizeX, int sizeY, color feltFarve, color Farven, PFont font, String tom) {

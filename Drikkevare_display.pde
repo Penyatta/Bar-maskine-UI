@@ -1,8 +1,9 @@
 
-
+String[] flasker=new String[9];
 String[] Flasker=new String[9];
 
-PImage drikkevarerside;
+ PImage drikkevarerside;
+
 
 void disDrikkevare() {
   
