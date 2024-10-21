@@ -35,8 +35,6 @@ boolean visDrikkevare=false;
 boolean visRediger=false;
 boolean visBarSkænker=false;
 
-
-
 void controlEvent(ControlEvent theEvent) {
   if(theEvent.isAssignableFrom(Textfield.class)) {
     println("controlEvent: accessing a string from controller '"
