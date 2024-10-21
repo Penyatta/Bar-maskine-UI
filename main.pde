@@ -42,10 +42,11 @@ void setup() {
   textFont(font);
 
   size(1440, 900);
-  
+
   //Kommer mojito ind i programmet som vist i figma
-  Opskrift Mojito =new Opskrift("Mojito");
-  opskrifter.add(Mojito);
+  Opskrift Mojito =new Opskrift();
+  DemAlle.opskrifter.add(Mojito);
+  Mojito.tilNavn("Mojito");
   Mojito.tilIng("Lime sodavand", 75);
   Mojito.tilIng("Hvid Rom", 75);
   Mojito.tilBesk("Klassisk Mojito med lime og mynte");

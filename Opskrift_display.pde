@@ -8,6 +8,9 @@ String[] IngrediensTextFelter= new String[5]; //array med ingrediens texfelterne
 String[] MaengderTextFelter= new String[5]; //array med mængde texfelternes navne
 String[] AndreIngredienserTextFelter= new String[5]; //array med andre ingredienser texfelternes navne
 String[] FremgangsmaadeTextFelter= new String[5]; //array med fremgangsmåde texfelternes navne
+String Titel="Titlen";
+String Beskrivelse="Beskrivelsen";
+int NuværendeOpskrift;
 
 void setupOpskrift() {
   PFont font = createFont("arial", 20);
@@ -16,7 +19,7 @@ void setupOpskrift() {
   // Størrelsen på opskrift textfelterne
   int textFeltSizeX=100; 
   int textFeltMaengderSizeX=50; 
-  int textFeltSizeY=20; 
+  int textFeltSizeY=40; 
   for (int i=0; i<5; i++) {
     // giver navne til alle textfelterne
     IngrediensTextFelter[i]="ing"+i;
@@ -29,6 +32,10 @@ void setupOpskrift() {
     lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,AndreIngredienserTextFelter[i]);
     lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,FremgangsmaadeTextFelter[i]);
   }
+  textFeltSizeX=300;
+  textFeltBaggrund=color(66,0,2);
+  lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,Titel);
+  lavTextFelt(10,10,textFeltSizeX,textFeltSizeY,textFeltBaggrund,textFarve,font,Beskrivelse);
 }
 
 void disOpskrift() {
@@ -77,4 +84,23 @@ void drawScrollbar() {
 void mouseWheel(MouseEvent event) {
   float e = event.getCount();
   scrollY += e * 20;  // Ændr scrollY afhængigt af, hvor meget der scroller
+}
+
+void OpskriftTextfelterne(){
+  cp5.get(Textfield.class,Titel).show();
+  cp5.get(Textfield.class,Titel).setPosition(564,130);
+  cp5.get(Textfield.class,Beskrivelse).show();
+   cp5.get(Textfield.class,Beskrivelse).setPosition(564,226);
+  for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).Ingredienser.size();i++){
+    cp5.get(Textfield.class,IngrediensTextFelter[i]).show();
+  }
+  for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).maengder.size();i++){
+    cp5.get(Textfield.class,MaengderTextFelter[i]).show();
+  }
+  for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).extraIngredienser.size();i++){
+    cp5.get(Textfield.class,AndreIngredienserTextFelter[i]).show();
+  }
+  for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).Fremgangsmaade.size();i++){
+    cp5.get(Textfield.class,FremgangsmaadeTextFelter[i]).show();
+  }
 }

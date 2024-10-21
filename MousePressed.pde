@@ -29,6 +29,8 @@ void mousePressed() {
     }
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
       visOpskrifter=true;
+      NuværendeOpskrift=DemAlle.tilOpskrift();
+      OpskriftTextfelterne();
     }
 
     if (mouseX > 83 && mouseX < 83+410 && mouseY > 561 && mouseY < 561+190) {

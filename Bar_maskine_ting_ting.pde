@@ -8,8 +8,9 @@ class Opskrift {
   ArrayList<Integer> maengder = new ArrayList<Integer>();
   ArrayList<String> extraIngredienser =new ArrayList<String>();
   ArrayList<String> Fremgangsmaade = new ArrayList<String>();
-  Opskrift(String tempNavn) {
-    navn=tempNavn;
+  
+  void tilNavn(String Navn){
+   navn=Navn; 
   }
   void tilIng(String ingrediens, int maengde) {
     Ingredienser.add(ingrediens);
@@ -26,8 +27,19 @@ class Opskrift {
   }
 }
 
+class Opskrifter {
+  ArrayList<Opskrift> opskrifter = new ArrayList<Opskrift>();
+  int tilOpskrift(){
+   Opskrift opskrift =new Opskrift();
+   opskrifter.add(opskrift);
+   return opskrifter.size()-1;
+  }
+  void tilEksisOpskrift(Opskrift opskrift){
+    opskrifter.add(opskrift);
+  }
+}
 
-ArrayList<Opskrift> opskrifter = new ArrayList<Opskrift>();
+Opskrifter DemAlle =new Opskrifter();
 boolean visOpskrifter=false;
 boolean visSkænk=false;
 boolean visRens=false;
