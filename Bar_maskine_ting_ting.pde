@@ -18,11 +18,11 @@ class Opskrift {
   void tilBesk(String tempBeskrivelse) {
     beskrivelse=tempBeskrivelse;
   }
-  void tilExIng(String extraIngrediens){
-   extraIngredienser.add(extraIngrediens); 
+  void tilExIng(String extraIngrediens) {
+    extraIngredienser.add(extraIngrediens);
   }
-  void tilFrem(String fremgangsmaade){
-   Fremgangsmaade.add(fremgangsmaade); 
+  void tilFrem(String fremgangsmaade) {
+    Fremgangsmaade.add(fremgangsmaade);
   }
 }
 
@@ -36,12 +36,18 @@ boolean visRediger=false;
 boolean visBarSkænker=false;
 boolean visSkænkFærdig = true;
 
-
+//Hvis man trykker enter når man er i et textfelt aktiverer denne
 void controlEvent(ControlEvent theEvent) {
-  if(theEvent.isAssignableFrom(Textfield.class)) {
+  if (theEvent.isAssignableFrom(Textfield.class)) {
     println("controlEvent: accessing a string from controller '"
-            +theEvent.getName()+"': "
-            +theEvent.getStringValue()
-            );
+      +theEvent.getName()+"': "
+      +theEvent.getStringValue()
+      );
+    for (int i=0; i<9; i++) {
+      //Hvis det er en Drikkevare textfelt går den her ind
+      if (theEvent.getName().equals("Drik"+i)) {
+        flasker[i]=theEvent.getStringValue();
+      }
+    }
   }
 }
