@@ -21,12 +21,26 @@ void mousePressed() {
       visOpskrifter = false;
     }
 
-    // Du kan fortsætte med flere knapper her...
+    // Jeg forsætter med knapperne her
 
   } else if (visSkænk) {
     // Skænk logik
   } else if (visRens) {
-    // Rens logik
+    // Tjek om musen er over "kom i gang knap"
+   if((mouseX>105 && mouseX<105+300) && (mouseY>250 && mouseY<250+80)){
+     visRensTrinEt=true;
+     visRens=false;
+     startTime = millis();  // Gem starttidspunktet
+     println("noo");
+   }
+   
+   //tjek om musen er over "kom i gang knap" nr. 2
+   if((mouseX>105 && mouseX<105+300) && (mouseY>740 && mouseY<740+80)){
+     visRensTrinTo=true;
+     visRens=false;
+     startTime = millis();  // Gem starttidspunktet
+     println("noo");
+   }
   } else if (visBarSkænker) {
     // BarSkænker logik
   } else if (visRediger) {
@@ -38,7 +52,6 @@ void mousePressed() {
       // Handling for redigeringsknap 2
       println("Redigerer via knap 2");
     }
-    // Flere knapper kan håndteres her...
 
   } else {
     // Hovedmenu - hvor man kan vælge drikkevare, opskrifter, rens og skænk
