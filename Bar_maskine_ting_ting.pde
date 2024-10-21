@@ -43,7 +43,7 @@ void controlEvent(ControlEvent theEvent) {
       );
     for (int i=0; i<9; i++) {
       //Hvis det er en Drikkevare textfelt går den her ind
-      if (theEvent.getName()=="Drik"+i) {
+      if (theEvent.getName().equals("Drik"+i)) {
         flasker[i]=theEvent.getStringValue();
       }
     }
