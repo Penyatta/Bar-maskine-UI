@@ -74,9 +74,14 @@ void draw() {
     disRens();
     } else if(visBarSkænker){
    disBarSkaenker();
+
+ 
+    } else if(visRediger){
+   disRediger();
      } else if(visSkænkFærdig){
    disSkaenkFaerdig();
  } else {
+
     disHomepage();
   }
 }
