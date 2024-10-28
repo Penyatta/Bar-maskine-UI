@@ -2,7 +2,7 @@
 void mousePressed() {
   if (visDrikkevare) {
   } else if (visOpskrifter) {
-  
+
     if ((mouseX > 305 && mouseX <305+150 ) && (mouseY > 375-scrollY && mouseY <375+50-scrollY)) {
       visRediger=true;
       visOpskrifter=false;
@@ -12,7 +12,7 @@ void mousePressed() {
     if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {
       // Hvis musen er inden for området, udfør handlingen
       visBarSkænker = true;  // Ændr tilstanden, eller udfør en handling
-      visSkænk = false;    
+      visSkænk = false;
       println("Knappen blev klikket!");  // Udskriv til konsollen for at teste
     }
   } else if (visRens) {
@@ -21,10 +21,10 @@ void mousePressed() {
 
     if (mouseX > 83 && mouseX < 480 && mouseY > 294 && mouseY < 484) {
       visDrikkevare=true;
-      
+
       //Viser drikkevare textfelterne
       for (int i=0; i<9; i++) {
-      cp5.get(Textfield.class,Flasker[i]).show();
+        cp5.get(Textfield.class, Flasker[i]).show();
       }
     }
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
@@ -41,20 +41,31 @@ void mousePressed() {
     }
   }
 
-    if (visDrikkevare || visOpskrifter || visSkænk || visRens) {
-      // Hvis vi er på en af undersiderne, og der trykkes på "tilbage"-knappen
-      if (mouseX > 0 && mouseX < 110 && mouseY > 0 && mouseY < 60) {
-        // Når brugeren klikker på "tilbage"-knappen, går vi tilbage til startsiden
-        visDrikkevare = false;
-        visOpskrifter = false;
-        visSkænk = false;
-        visRens = false;
-        visBarSkænker = false;
-        //Viser drikkevare textfelterne
-      for (int i=0; i<9; i++) {
-      cp5.get(Textfield.class,Flasker[i]).hide();
+  if (visDrikkevare || visOpskrifter || visSkænk || visRens) {
+    // Hvis vi er på en af undersiderne, og der trykkes på "tilbage"-knappen
+    if (mouseX > 0 && mouseX < 110 && mouseY > 0 && mouseY < 60) {
+      //Sørger fr at textfelterne fra opskrifterne ikke vises på hjemmeskærmen
+      if (visOpskrifter) {
+        for (int i=0; i<5; i++) {
+          cp5.get(Textfield.class, IngrediensTextFelter[i]).hide();
+          cp5.get(Textfield.class, MaengderTextFelter[i]).hide();
+          cp5.get(Textfield.class, AndreIngredienserTextFelter[i]).hide();
+          cp5.get(Textfield.class, FremgangsmaadeTextFelter[i]).hide();
+        }
+        cp5.get(Textfield.class, Titel).hide();
+        cp5.get(Textfield.class, Beskrivelse).hide();
       }
-      
     }
+    // Når brugeren klikker på "tilbage"-knappen, går vi tilbage til startsiden
+    visDrikkevare = false;
+    visOpskrifter = false;
+    visSkænk = false;
+    visRens = false;
+    visBarSkænker = false;
+    //Viser drikkevare textfelterne
+    for (int i=0; i<9; i++) {
+      cp5.get(Textfield.class, Flasker[i]).hide();
+    }
+    //Sørger for at
   }
 }

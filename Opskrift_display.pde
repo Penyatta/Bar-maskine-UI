@@ -11,6 +11,7 @@ String[] FremgangsmaadeTextFelter= new String[5]; //array med fremgangsmåde tex
 String Titel="Titlen";
 String Beskrivelse="Beskrivelsen";
 int NuværendeOpskrift;
+int LøbendeLængde;
 
 void setupOpskrift() {
   PFont font = createFont("arial", 20);
@@ -87,12 +88,14 @@ void mouseWheel(MouseEvent event) {
 }
 
 void OpskriftTextfelterne(){
+  LøbendeLængde=0;
   cp5.get(Textfield.class,Titel).show();
   cp5.get(Textfield.class,Titel).setPosition(564,130);
   cp5.get(Textfield.class,Beskrivelse).show();
    cp5.get(Textfield.class,Beskrivelse).setPosition(564,226);
   for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).Ingredienser.size();i++){
     cp5.get(Textfield.class,IngrediensTextFelter[i]).show();
+    
   }
   for(int i=0;i<DemAlle.opskrifter.get(NuværendeOpskrift).maengder.size();i++){
     cp5.get(Textfield.class,MaengderTextFelter[i]).show();
