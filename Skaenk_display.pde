@@ -1,5 +1,6 @@
 
 PImage Skænk;
+int scrollbarOffset = 100;
 
 void disSkaenk() {
   Skænk = loadImage("Skænk.png");
@@ -23,14 +24,10 @@ void disSkaenk() {
 
 // Funktion til at tegne scrollbar
 void drawScrollbar2() {
-  
-  // Beregn scrollbarens position baseret på scrollY
   float scrollbarY = map(scrollY, 0, maxScroll, 0, 665);
   
-  // map((value, start1, stop1, start2, stop2)  
-  
-  // Tegn den aktuelle scrollbar (den bevægende streg)
+  // Draw the current scrollbar (the moving bar)
   fill(#EBBF5E);
   noStroke();
-  rect(1409, scrollbarY+115, 16, 64, 10);
+  rect(1409, scrollbarY+100, 16, 64, 10); // Update to use scrollbarHeight
 }

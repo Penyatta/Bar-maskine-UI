@@ -38,6 +38,7 @@ boolean visRediger=false;
 boolean visBarSkænker=false;
 boolean visSkænkFærdig = false;
 
+
 //Hvis man trykker enter når man er i et textfelt aktiverer denne
 void controlEvent(ControlEvent theEvent) {
   if (theEvent.isAssignableFrom(Textfield.class)) {

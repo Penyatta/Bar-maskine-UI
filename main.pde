@@ -85,6 +85,7 @@ void draw() {
  } else {
 
     disHomepage();
+    
   }
 }
 
