@@ -45,9 +45,6 @@ void mousePressed() {
 
     // Jeg forsætter med knapperne her
 
-  } else if (visSkænk) {
-    // Skænk logik
-
   } else if (visRens) {
     // Tjek om musen er over "kom i gang knap"
    if((mouseX>105 && mouseX<105+300) && (mouseY>250 && mouseY<250+80)){
@@ -79,6 +76,21 @@ void mousePressed() {
   } else {
 
     // BarSkænker logik
+   
+   } else if (visSkænkFærdig) {
+  }
+  if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
+    disHomepage();
+    visOpskrifter=false;
+    visSkænk=false;
+    visRens=false;
+    visDrikkevare=false;
+    visRediger=false;
+    visBarSkænker=false;
+    visSkænkFærdig = false;
+    
+  
+    
   } else if (visRediger) {
     // Håndtering af redigeringstilstand
     if (aktivRedigerKnap == 1) {
