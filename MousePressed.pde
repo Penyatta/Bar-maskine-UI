@@ -24,7 +24,15 @@ void mousePressed() {
     // Jeg forsætter med knapperne her
 
   } else if (visSkænk) {
-    // Skænk logik
+    
+     // Tjek om musen er inden for det definerede område (knappen)
+    if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {           
+      // Hvis musen er inden for området, udfør handlingen
+      visBarSkænker = true;  // Ændr tilstanden, eller udfør en handling
+      visSkænk = false;
+      println("Knappen blev klikket!");  // Udskriv til konsollen for at teste
+      
+    }
   } else if (visRens) {
     // Tjek om musen er over "kom i gang knap"
    if((mouseX>105 && mouseX<105+300) && (mouseY>250 && mouseY<250+80)){
@@ -43,6 +51,21 @@ void mousePressed() {
    }
   } else if (visBarSkænker) {
     // BarSkænker logik
+   
+   } else if (visSkænkFærdig) {
+  }
+  if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
+    disHomepage();
+    visOpskrifter=false;
+    visSkænk=false;
+    visRens=false;
+    visDrikkevare=false;
+    visRediger=false;
+    visBarSkænker=false;
+    visSkænkFærdig = false;
+    
+  
+    
   } else if (visRediger) {
     // Håndtering af redigeringstilstand
     if (aktivRedigerKnap == 1) {
