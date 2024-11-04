@@ -6,8 +6,7 @@ class Opskrift {
   String beskrivelse;
   ArrayList<String> Ingredienser = new ArrayList<String>();
   ArrayList<Integer> maengder = new ArrayList<Integer>();
-  ArrayList<String> extraIngredienser =new ArrayList<String>();
-  ArrayList<String> Fremgangsmaade = new ArrayList<String>();
+  
   
   void tilNavn(String Navn){
    navn=Navn; 
@@ -18,12 +17,6 @@ class Opskrift {
   }
   void tilBesk(String tempBeskrivelse) {
     beskrivelse=tempBeskrivelse;
-  }
-  void tilExIng(String extraIngrediens) {
-    extraIngredienser.add(extraIngrediens);
-  }
-  void tilFrem(String fremgangsmaade) {
-    Fremgangsmaade.add(fremgangsmaade);
   }
 }
 

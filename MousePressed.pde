@@ -49,8 +49,6 @@ void mousePressed() {
         for (int i=0; i<5; i++) {
           cp5.get(Textfield.class, IngrediensTextFelter[i]).hide();
           cp5.get(Textfield.class, MaengderTextFelter[i]).hide();
-          cp5.get(Textfield.class, AndreIngredienserTextFelter[i]).hide();
-          cp5.get(Textfield.class, FremgangsmaadeTextFelter[i]).hide();
         }
         cp5.get(Textfield.class, Titel).hide();
         cp5.get(Textfield.class, Beskrivelse).hide();

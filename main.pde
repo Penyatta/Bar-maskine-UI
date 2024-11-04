@@ -50,12 +50,6 @@ void setup() {
   Mojito.tilIng("Lime sodavand", 75);
   Mojito.tilIng("Hvid Rom", 75);
   Mojito.tilBesk("Klassisk Mojito med lime og mynte");
-  Mojito.tilExIng("Rørsukker");
-  Mojito.tilExIng("Lime");
-  Mojito.tilExIng("Mynte");
-  Mojito.tilFrem("Fyld glas med isterninger");
-  Mojito.tilFrem("Tilføj sukker, mynte, lime");
-  Mojito.tilFrem("Sæt glas, og skænk");
 
   //load et billede
   img = loadImage("Flasker.png");
