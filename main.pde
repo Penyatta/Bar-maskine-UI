@@ -72,11 +72,18 @@ void draw() {
     disSkaenk();
   } else if (visRens) {
     disRens();
+     } else if (visRensTrinEt) {
+    disRensTrinEt();
+       } else if (visRensTrinTo) {
+    disRensTrinTo();
     } else if(visBarSkænker){
    disBarSkaenker();
+    } else if(visRediger){
+   disRediger();
      } else if(visSkænkFærdig){
    disSkaenkFaerdig();
  } else {
+
     disHomepage();
     
   }
