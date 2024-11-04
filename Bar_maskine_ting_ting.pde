@@ -34,7 +34,7 @@ boolean visRens=false;
 boolean visDrikkevare=false;
 boolean visRediger=false;
 boolean visBarSkænker=false;
-boolean visSkænkFærdig = true;
+boolean visSkænkFærdig = false;
 
 
 void controlEvent(ControlEvent theEvent) {

@@ -1,30 +1,50 @@
 
+int mx1 = 1190;
+int mx2 = 1190+199;
+int my1 = 291;
+int my2 = 291 + 85;
+
 void mousePressed() {
   if (visDrikkevare) {
   } else if (visOpskrifter) {
-  
+
     if ((mouseX > 305 && mouseX <305+150 ) && (mouseY > 375-scrollY && mouseY <375+50-scrollY)) {
       visRediger=true;
       visOpskrifter=false;
     }
   } else if (visSkænk) {
+    
+    for(int i = 1190; i < 10; i = i + 215) {
+
     // Tjek om musen er inden for det definerede område (knappen)
-    if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {
+    if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {           
       // Hvis musen er inden for området, udfør handlingen
       visBarSkænker = true;  // Ændr tilstanden, eller udfør en handling
-      visSkænk = false;    
+      visSkænk = false;
       println("Knappen blev klikket!");  // Udskriv til konsollen for at teste
+    }
     }
   } else if (visRens) {
   } else if (visBarSkænker) {
+  } else if (visSkænkFærdig) {
+  }
+  if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
+    disHomepage();
+    visOpskrifter=false;
+    visSkænk=false;
+    visRens=false;
+    visDrikkevare=false;
+    visRediger=false;
+    visBarSkænker=false;
+    visSkænkFærdig = false;
   } else {
 
     if (mouseX > 83 && mouseX < 480 && mouseY > 294 && mouseY < 484) {
       visDrikkevare=true;
-      
+
       //Viser drikkevare textfelterne
       for (int i=0; i<9; i++) {
-      cp5.get(Textfield.class,Flasker[i]).show();
+        cp5.get(Textfield.class, Flasker[i]).show();
       }
     }
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
@@ -39,20 +59,19 @@ void mousePressed() {
     }
   }
 
-    if (visDrikkevare || visOpskrifter || visSkænk || visRens) {
-      // Hvis vi er på en af undersiderne, og der trykkes på "tilbage"-knappen
-      if (mouseX > 0 && mouseX < 110 && mouseY > 0 && mouseY < 60) {
-        // Når brugeren klikker på "tilbage"-knappen, går vi tilbage til startsiden
-        visDrikkevare = false;
-        visOpskrifter = false;
-        visSkænk = false;
-        visRens = false;
-        visBarSkænker = false;
-        //Viser drikkevare textfelterne
+  if (visDrikkevare || visOpskrifter || visSkænk || visRens) {
+    // Hvis vi er på en af undersiderne, og der trykkes på "tilbage"-knappen
+    if (mouseX > 0 && mouseX < 110 && mouseY > 0 && mouseY < 60) {
+      // Når brugeren klikker på "tilbage"-knappen, går vi tilbage til startsiden
+      visDrikkevare = false;
+      visOpskrifter = false;
+      visSkænk = false;
+      visRens = false;
+      visBarSkænker = false;
+      //Viser drikkevare textfelterne
       for (int i=0; i<9; i++) {
-      cp5.get(Textfield.class,Flasker[i]).hide();
+        cp5.get(Textfield.class, Flasker[i]).hide();
       }
-      
     }
   }
 }

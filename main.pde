@@ -78,6 +78,7 @@ void draw() {
    disSkaenkFaerdig();
  } else {
     disHomepage();
+    
   }
 }
 
