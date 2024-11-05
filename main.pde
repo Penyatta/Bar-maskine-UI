@@ -13,6 +13,7 @@ void setup() {
   //Giver navne til drikkevare textfelterne
   for (int i=0; i<9; i++) {
     Flasker[i]="Drik"+i;
+    flasker[i]="";
   }
   //De forskellige ting til drikkevare textfelterne
   int y = 250;
@@ -47,7 +48,7 @@ void setup() {
   Opskrift Mojito =new Opskrift("Mojito");
   opskrifter.add(Mojito);
   Mojito.tilIng("Lime sodavand", 75);
-  Mojito.tilIng("Hvid Rom", 75);
+  Mojito.tilIng("Hvid rom", 75);
   Mojito.tilBesk("Klassisk Mojito med lime og mynte");
   Mojito.tilExIng("Rørsukker");
   Mojito.tilExIng("Lime");
