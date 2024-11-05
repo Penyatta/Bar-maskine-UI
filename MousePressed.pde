@@ -10,6 +10,9 @@ int pump2;
 boolean ing1;
 boolean ing2;
 
+int StartTid1;
+boolean visIkkeSkænk=false;
+
 int aktivRedigerKnap = -1;  // -1 betyder ingen redigeringsknap er aktiv
 //boolean visRediger = false;
 
@@ -25,38 +28,36 @@ void mousePressed() {
   } else if (visSkænk) {
 
     // Tjek om musen er inden for det definerede område (knappen)
-    if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {           
+    if (mouseX > 1190 && mouseX < 1190 + 199 && mouseY > 291-scrollY && mouseY < 291 + 85-scrollY) {
       // Hvis musen er inden for området, udfør handlingen
-      println("ok");
+
       ing1=false;
       ing2=false;
-      for(int i=0;i<9;i++){
-       if(flasker[i].equals("Lime sodavand")){
-        ing1=true; 
-        pump1=i;
-        println("ok1");
-       }
-       if(flasker[i].equals("Hvid Rom")){
-        ing2=true; 
-        pump2=i;
-        println("ok2");
-       }
+      for (int i=0; i<9; i++) {
+        if (flasker[i].equals("Lime sodavand")) {
+          ing1=true;
+          pump1=i;
+        }
+        if (flasker[i].equals("Hvid Rom")) {
+          ing2=true;
+          pump2=i;
+        }
       }
-      if(ing1&&ing2){
-        println("ok3");
-      drive(pump1+"-"+pump2,"13-13");
-      
-      visBarSkænker = true;  // Ændr tilstanden, eller udfør en handling
-      visSkænk = false;
-      println("Knappen blev klikket!");  // Udskriv til konsollen for at teste
-      
-      }
-      else{
-    }
-    }
-    
+      if (ing1&&ing2) {
 
-    
+        drive(pump1+"-"+pump2, "13-13");
+
+        visBarSkænker = true;  // Ændr tilstanden, eller udfør en handling
+        visSkænk = false;
+        println("Knappen blev klikket!");  // Udskriv til konsollen for at teste
+      } else {
+        visIkkeSkænk=true;
+        StartTid1=millis();
+      }
+    }
+
+
+
     // Check om musen er over redigeringsknap 1
     if ((mouseX > 305 && mouseX < 305 + 150) && (mouseY > 375 - scrollY && mouseY < 375 + 50 - scrollY)) {
       aktivRedigerKnap = 1;  // Knap 1 blev trykket
@@ -72,52 +73,45 @@ void mousePressed() {
     }
 
     // Jeg forsætter med knapperne her
-
   } else if (visRens) {
     // Tjek om musen er over "kom i gang knap"
-   if((mouseX>105 && mouseX<105+300) && (mouseY>250 && mouseY<250+80)){
-     visRensTrinEt=true;
-     visRens=false;
-     startTime = millis();  // Gem starttidspunktet
-     println("noo");
-   }
-   
-   //tjek om musen er over "kom i gang knap" nr. 2
-   if((mouseX>105 && mouseX<105+300) && (mouseY>740 && mouseY<740+80)){
-     visRensTrinTo=true;
-     visRens=false;
-     startTime = millis();  // Gem starttidspunktet
-     println("noo");
-   }
+    if ((mouseX>105 && mouseX<105+300) && (mouseY>250 && mouseY<250+80)) {
+      visRensTrinEt=true;
+      visRens=false;
+      startTime = millis();  // Gem starttidspunktet
+      println("noo");
+    }
+
+    //tjek om musen er over "kom i gang knap" nr. 2
+    if ((mouseX>105 && mouseX<105+300) && (mouseY>740 && mouseY<740+80)) {
+      visRensTrinTo=true;
+      visRens=false;
+      startTime = millis();  // Gem starttidspunktet
+      println("noo");
+    }
   } else if (visBarSkænker) {
   } else if (visSkænkFærdig) {
-     if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
-    disHomepage();
-    visOpskrifter=false;
-    visSkænk=false;
-    visRens=false;
-    visDrikkevare=false;
-    visRediger=false;
-    visBarSkænker=false;
-    visSkænkFærdig = false;
-  }
- 
-  }
-  else if (visSkænkFærdig) {
-     if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
-    disHomepage();
-    visOpskrifter=false;
-    visSkænk=false;
-    visRens=false;
-    visDrikkevare=false;
-    visRediger=false;
-    visBarSkænker=false;
-    visSkænkFærdig = false;
-  }
-  
-    
-  
-    
+    if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
+      disHomepage();
+      visOpskrifter=false;
+      visSkænk=false;
+      visRens=false;
+      visDrikkevare=false;
+      visRediger=false;
+      visBarSkænker=false;
+      visSkænkFærdig = false;
+    }
+  } else if (visSkænkFærdig) {
+    if (mouseX > 626 && mouseX < 626+534 && mouseY > 458 && mouseY < 458+82) {
+      disHomepage();
+      visOpskrifter=false;
+      visSkænk=false;
+      visRens=false;
+      visDrikkevare=false;
+      visRediger=false;
+      visBarSkænker=false;
+      visSkænkFærdig = false;
+    }
   } else if (visRediger) {
     // Håndtering af redigeringstilstand
     if (aktivRedigerKnap == 1) {
@@ -127,17 +121,15 @@ void mousePressed() {
       // Handling for redigeringsknap 2
       println("Redigerer via knap 2");
     }
-
-
   } else {
     // Hovedmenu - hvor man kan vælge drikkevare, opskrifter, rens og skænk
     if (mouseX > 83 && mouseX < 480 && mouseY > 294 && mouseY < 484) {
       visDrikkevare = true;
-for (int i=0; i<9; i++) {
+      for (int i=0; i<9; i++) {
         cp5.get(Textfield.class, Flasker[i]).show();
       }
     }
-    
+
     if (mouseX > 530 && mouseX < 936 && mouseY > 294 && mouseY < 484) {
       visOpskrifter = true;
     }
@@ -162,7 +154,7 @@ for (int i=0; i<9; i++) {
       visBarSkænker = false;
 
       //Viser drikkevare textfelterne
-      
+
 
       visRediger = false;
       aktivRedigerKnap = -1;  // Ingen redigeringsknap aktiv

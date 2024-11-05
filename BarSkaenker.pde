@@ -1,6 +1,6 @@
 PImage BarSkænker;
 
-int skænktid = 5000;
+int skænktid = 13000;
 int starttid;
 boolean timerStarted = false;  // Variabel til at tjekke, om timeren er startet
 

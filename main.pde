@@ -88,6 +88,22 @@ void draw() {
     disHomepage();
     
   }
+  if(visIkkeSkænk){
+   if(StartTid1>(millis()- 5000)){
+     rectMode(CENTER);
+     fill(255);
+     rect(width/2,height/2,300,300,20);
+     rectMode(CORNER);
+     fill(0);
+     textSize(30);
+     text("Der var ikke de",width/2-120,height/2-100);
+     text("rigtige ingredienser",width/2-120,height/2-50);
+      text("på flaskerne,",width/2-120,height/2);
+      text("måske er de stavet",width/2-120,height/2+50);
+      text("forkert.",width/2-120,height/2+100);
+     textSize(12);
+   }
+  }
 }
 
 
