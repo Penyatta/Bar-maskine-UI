@@ -34,11 +34,11 @@ void mousePressed() {
       ing1=false;
       ing2=false;
       for (int i=0; i<9; i++) {
-        if (flasker[i].equals("Lime sodavand")) {
+        if (flasker[i].toLowerCase().equals("lime sodavand")) {
           ing1=true;
           pump1=i;
         }
-        if (flasker[i].equals("Hvid Rom")) {
+        if (flasker[i].toLowerCase().equals("hvid rom")) {
           ing2=true;
           pump2=i;
         }
